@@ -1,6 +1,6 @@
 # System prompt for export control classification
 
-Use this prompt when you (the agent) perform the classification reasoning yourself, then submit the result to the ExChek API for adjudicator review and audit.
+Use this prompt when you (the agent) perform the classification reasoning yourself. You may use Part 774 (CCL) and Part 121 (USML) structure data from the ExChek API (GET /api/ecfr/774 and /api/ecfr/121) or from the eCFR developer API to support Order of Review and citations.
 
 ---
 

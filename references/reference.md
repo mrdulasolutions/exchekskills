@@ -1,5 +1,7 @@
 # ExChek API reference (Claude skill)
 
+The skill's Order of Review mirrors **Supplement No. 4 to Part 774** (Commerce Control List Order of Review) and the **BIS CCL Order of Review** and **Specially Designed** decision tools: https://www.bis.doc.gov/index.php/export-control-classification-interactive-tool and https://www.bis.doc.gov/wrappers/sd/special_design_tool.htm.
+
 - **Base URL**: `https://api.exchek.us`
 - **Payment**: None. The ExChek classification skill is free; regulatory snapshot endpoints are read-only and require no auth or payment.
 

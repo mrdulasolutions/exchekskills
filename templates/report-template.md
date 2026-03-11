@@ -42,6 +42,9 @@ Rationale: {{JURISDICTION_RATIONALE}}
 ================================================================================
 
 ECCN / USML or other classification: {{ECCN}}
+Order of Review summary: {{OOR_SUMMARY}}
+(e.g., Supplement No. 4 to Part 774 Steps 1–6 applied; jurisdiction confirmed; Step X determined classification.)
+
 Technical analysis and justification: {{JUSTIFICATION}}
 
 ================================================================================
@@ -59,6 +62,7 @@ Technical analysis and justification: {{JUSTIFICATION}}
 ================================================================================
 6. REGULATORY CITATIONS
 ================================================================================
+Include citations to specific ECCN and paragraph (e.g., 1A995.a). When "specially designed" was applied, cite 15 CFR 772.1. Optionally list "considered and rejected" (e.g., USML, 9x515/600 series) with a one-line reason for each.
 
 {{CITATIONS}}
 

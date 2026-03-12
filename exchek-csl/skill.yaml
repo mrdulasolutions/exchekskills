@@ -1,0 +1,15 @@
+# ExChek CSL Search Skill manifest
+# Used by agents and tools for discovery; SKILL.md holds full instructions.
+
+name: exchek-csl
+description: Search the U.S. Consolidated Screening List (CSL) via the Trade.gov API. Use when the user wants to screen a party or entity against export screening lists, search the CSL by name (including fuzzy search), or check if a name appears on federal lists. Requires a free API key from developer.trade.gov.
+compatibility:
+  - Claude Code
+  - Claude desktop
+  - Claude CoWork
+  - Claude web
+  - Perplexity
+  - OpenAI
+
+version: "1"
+main: SKILL.md

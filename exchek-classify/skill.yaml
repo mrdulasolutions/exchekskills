@@ -1,0 +1,14 @@
+# ExChek Classification Skill manifest
+# Used by agents and tools for discovery; SKILL.md holds full instructions.
+
+name: exchek-classify
+description: Classify export items for ECCN (BIS/ITAR) using regulatory data and in-skill classification. Free to use; optional donation. Use when the user wants to classify an item, determine ECCN, check BIS or ITAR jurisdiction, or get an audit-ready export classification memo.
+compatibility:
+  - Claude Code
+  - Claude desktop
+  - Claude CoWork
+  - Claude web
+
+# Optional metadata
+version: "1"
+main: SKILL.md

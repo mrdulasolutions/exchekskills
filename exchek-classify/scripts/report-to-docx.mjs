@@ -15,14 +15,20 @@ import {
   Paragraph,
   TextRun,
   HeadingLevel,
+  DocumentDefaults,
+  Styles,
 } from "docx";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Only the first = underline promotes to H1 (main title). Others are section separators.
+const MAX_PARAGRAPH_LENGTH_FOR_H3 = 120;
 
 function parseReportToBlocks(md) {
   const lines = md.split(/\r?\n/);
   const blocks = [];
   let i = 0;
+  let seenFirstEqualsUnderline = false;
 
   while (i < lines.length) {
     const line = lines[i];
@@ -34,11 +40,14 @@ function parseReportToBlocks(md) {
       continue;
     }
 
-    // Section header: line of = only (underline for line above)
+    // Line of = only: first occurrence = underline for main title (H1); rest are separators, skip
     if (/^=+$/.test(trimmed)) {
-      const prev = blocks[blocks.length - 1];
-      if (prev?.type === "paragraph" && prev.text) {
-        prev.type = "heading1";
+      if (!seenFirstEqualsUnderline) {
+        const prev = blocks[blocks.length - 1];
+        if (prev?.type === "paragraph" && prev.text) {
+          prev.type = "heading1";
+        }
+        seenFirstEqualsUnderline = true;
       }
       i++;
       continue;
@@ -51,10 +60,14 @@ function parseReportToBlocks(md) {
       continue;
     }
 
-    // Subsection underline: "-------------------------------------------------"
+    // Subsection underline: only promote short single-line paragraphs to H3 (real subheadings)
     if (/^-+$/.test(trimmed) && trimmed.length > 10) {
       const prev = blocks[blocks.length - 1];
-      if (prev?.type === "paragraph" && prev.text) {
+      if (
+        prev?.type === "paragraph" &&
+        prev.text &&
+        prev.text.length <= MAX_PARAGRAPH_LENGTH_FOR_H3
+      ) {
         prev.type = "heading3";
       }
       i++;
@@ -141,6 +154,42 @@ function buildDocument(blocks) {
   }
 
   return new Document({
+    docDefaults: new DocumentDefaults({
+      run: {
+        font: "Calibri",
+        size: 22, // 11pt body (half-points)
+      },
+      paragraph: {
+        spacing: { after: 120, line: 276 },
+      },
+    }),
+    styles: new Styles({
+      paragraphStyles: [
+        {
+          id: "Normal",
+          name: "Normal",
+          run: { font: "Calibri", size: 22 },
+        },
+        {
+          id: "Heading1",
+          name: "Heading 1",
+          run: { font: "Calibri", size: 28, bold: true }, // 14pt
+          paragraph: { spacing: { before: 240, after: 120 } },
+        },
+        {
+          id: "Heading2",
+          name: "Heading 2",
+          run: { font: "Calibri", size: 24, bold: true }, // 12pt
+          paragraph: { spacing: { before: 240, after: 120 } },
+        },
+        {
+          id: "Heading3",
+          name: "Heading 3",
+          run: { font: "Calibri", size: 22, bold: true }, // 11pt bold
+          paragraph: { spacing: { before: 120, after: 60 } },
+        },
+      ],
+    }),
     sections: [
       {
         properties: {},

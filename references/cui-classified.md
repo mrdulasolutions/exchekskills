@@ -2,6 +2,10 @@
 
 When the user or their organization handles **Controlled Unclassified Information (CUI)** or **classified information**, the ExChek skill must be used in a way that complies with their security requirements.
 
+## Quick brief (for Don't know)
+
+Use this when the user selects "Don't know" in the CUI/Classified check (step 0). **CUI (Controlled Unclassified Information)** and **classified information** are categories of sensitive data that may have handling and distribution restrictions. Using cloud AI (e.g. Claude, ChatGPT, or APIs like ExChek in the cloud) can send that data outside the user's control and may violate their organization's security or export rules. If they might be working with CUI/classified, they should check with their security or compliance team before using ExChek in a cloud or online environment; otherwise they can use ExChek on-prem with a local LLM. Full guidance is below and at https://docs.exchek.us/docs/cui-classified.
+
 ## Do not use cloud or API LLMs for CUI/classified data
 
 **Do not use cloud-hosted services or API-based LLM models to process CUI or classified information.** Sending item descriptions, technical specifications, or other CUI/classified content to third-party cloud APIs (e.g., commercial Claude, ChatGPT, or other cloud LLM endpoints) may violate the user's agency or contractor security requirements and can result in unauthorized disclosure.

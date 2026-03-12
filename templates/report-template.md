@@ -28,6 +28,9 @@ End use: {{END_USE}}
 Destination country: {{DESTINATION_COUNTRY}}
 Intended use: {{INTENDED_USE}}
 Notes: {{NOTES}}
+Classification notes: {{CLASSIFICATION_NOTES}}
+Source document: {{SOURCE_DOCUMENT}}
+Excerpts used (if any): {{SOURCE_EXCERPTS}}
 
 ================================================================================
 2. JURISDICTION DETERMINATION

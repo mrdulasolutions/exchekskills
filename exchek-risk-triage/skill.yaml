@@ -1,0 +1,13 @@
+# ExChek Risk & Escalation Triage Skill manifest
+# Used by agents and tools for discovery; SKILL.md holds full instructions.
+
+name: exchek-risk-triage
+description: Score export/transaction risk (low/medium/high) from classification, CSL screening, destination, and end use. Recommends auto-approve, hold for export compliance, or escalate to legal, and produces a templated escalation note. Use when the user wants to triage risk, decide whether to hold or escalate, or get a risk score and escalation note for a transaction.
+compatibility:
+  - Claude Code
+  - Claude desktop
+  - Claude CoWork
+  - Claude web
+
+version: "1"
+main: SKILL.md

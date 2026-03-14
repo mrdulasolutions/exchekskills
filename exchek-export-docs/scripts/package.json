@@ -1,0 +1,13 @@
+{
+  "name": "exchek-report-to-docx",
+  "version": "1.0.0",
+  "description": "Convert ExChek markdown report to Word .docx",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "report-to-docx": "node report-to-docx.mjs"
+  },
+  "dependencies": {
+    "docx": "^9.6.1"
+  }
+}

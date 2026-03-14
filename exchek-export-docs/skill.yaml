@@ -1,0 +1,13 @@
+# ExChek Export Documentation Skill manifest
+# Used by agents and tools for discovery; SKILL.md holds full instructions.
+
+name: exchek-export-docs
+description: Draft export documentation (commercial invoice block, packing list, SLI, AES/EEI data) from shipment, classification, and screening. Flags AES required vs exempt; prep only, no actual filing. Use when preparing export docs or AES data.
+compatibility:
+  - Claude Code
+  - Claude desktop
+  - Claude CoWork
+  - Claude web
+
+version: "1"
+main: SKILL.md
